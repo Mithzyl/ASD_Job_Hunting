@@ -12,7 +12,29 @@ public class User<T> {
 
     private T paymentModel;
 
+    public User() {
+    }
 
+    public User(String userName, String password, Boolean status, String email, T paymentModel) {
+        this.userName = userName;
+        this.password = password;
+        this.status = status;
+        this.email = email;
+        this.paymentModel = paymentModel;
+    }
+
+    public String writeReview() {
+        return null;
+    }
+
+    // TODO: review parameter
+    public String updateReview(){
+        return null;
+    }
+
+    public String updateProfile(){
+        return null;
+    }
 
     public String getUserName() {
         return userName;
@@ -54,27 +76,5 @@ public class User<T> {
         this.paymentModel = paymentModel;
     }
 
-    public User() {
-    }
 
-    public User(String userName, String password, Boolean status, String email, T paymentModel) {
-        this.userName = userName;
-        this.password = password;
-        this.status = status;
-        this.email = email;
-        this.paymentModel = paymentModel;
-    }
-
-    public String writeReview() {
-        return null;
-    }
-
-    // TODO: review parameter
-    public String updateReview(){
-        return null;
-    }
-
-    public String updateProfile(){
-        return null;
-    }
 }
