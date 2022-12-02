@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to job hunting!");
+        System.out.println("Welcome to job hunting service!");
     }
 }
