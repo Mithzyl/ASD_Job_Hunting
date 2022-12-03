@@ -2,6 +2,7 @@ package JobSeeker;
 
 import Job.Review;
 import Payment.Invoice;
+import Payment.JobSeekerPaymentModel;
 import Server.Request;
 import User.User;
 
@@ -16,6 +17,12 @@ public class JobSeeker extends User {
     private List<Invoice> invoices;
 
     private List<Integer> assignedJobAd;
+
+    // composition
+    private JobSeekerPreference jobSeekerPreference;
+
+    private JobSeekerPaymentModel jobSeekerPaymentModel;
+
 
     public String updatePreference(){
         return null;
@@ -58,6 +65,7 @@ public class JobSeeker extends User {
 
     // Constructor
     public JobSeeker() {
+
     }
 
     public JobSeeker(Boolean openToWork, List<Review> reviews, List<Invoice> invoices, List<Integer> assignedJobAd) {
@@ -65,6 +73,10 @@ public class JobSeeker extends User {
         this.reviews = reviews;
         this.invoices = invoices;
         this.assignedJobAd = assignedJobAd;
+
+        // composition
+        this.jobSeekerPreference = new JobSeekerPreference();
+        this.jobSeekerPaymentModel = new JobSeekerPaymentModel() {};
     }
 
     // Getters and setters

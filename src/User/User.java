@@ -36,6 +36,7 @@ public class User<T> {
         return null;
     }
 
+    // Getters and setters
     public String getUserName() {
         return userName;
     }
