@@ -76,7 +76,7 @@ public class JobSeeker extends User {
 
         // composition
         this.jobSeekerPreference = new JobSeekerPreference();
-        this.jobSeekerPaymentModel = new JobSeekerPaymentModel() {};
+        this.jobSeekerPaymentModel = (JobSeekerPaymentModel) new Object();
     }
 
     // Getters and setters
