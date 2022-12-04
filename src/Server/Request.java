@@ -1,4 +1,11 @@
 package Server;
 
-public class Request {
+import User.User;
+
+public class Request<T> {
+    public User requesterId;
+
+    public T request;
+
+    public String payload;
 }
