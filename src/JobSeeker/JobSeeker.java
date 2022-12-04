@@ -51,14 +51,17 @@ public class JobSeeker extends User {
         return null;
     }
 
+    @Override
     public String writeReview(){
         return null;
     }
 
+    @Override
     public String updateReview(){
         return null;
     }
 
+    @Override
     public String updateProfile(){
         return null;
     }
