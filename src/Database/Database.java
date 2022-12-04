@@ -14,4 +14,9 @@ public class Database {
     public void update(){}
 
     public void delete(){}
+
+
+    // constructor
+    public Database() {
+    }
 }
