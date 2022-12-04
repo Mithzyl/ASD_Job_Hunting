@@ -10,4 +10,9 @@ public class ActiveJobSeekerStatusTracker {
     }
 
     public void addToQueue(Integer jobSeekerId){}
+
+
+    // constructor
+    public ActiveJobSeekerStatusTracker() {
+    }
 }

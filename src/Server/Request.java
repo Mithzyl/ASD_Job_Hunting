@@ -8,4 +8,10 @@ public class Request<T> {
     public T request;
 
     public String payload;
+
+
+    // constructor
+
+    public Request() {
+    }
 }

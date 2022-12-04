@@ -22,4 +22,10 @@ public class Matcher {
     public void receiveRequest(Request request){}
 
     public void getUnassignedJobAds(){}
+
+
+    // constructor
+
+    public Matcher() {
+    }
 }
