@@ -2,17 +2,17 @@ package Job;
 
 public class JobAd {
 
-    private String id;
+    public String id;
 
-    private String description;
+    public String description;
 
-    private Integer salary;
+    public Integer salary;
 
-    private WorkDetails status;
+    public WorkDetails status;
 
-    private String jobProviderId;
+    public String jobProviderId;
 
-    private String workDetailsId;
+    public String workDetailsId;
 
     public Review review;
 
