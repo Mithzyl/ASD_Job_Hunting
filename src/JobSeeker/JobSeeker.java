@@ -3,9 +3,11 @@ package JobSeeker;
 import Job.Review;
 import Payment.Invoice;
 import Payment.JobSeekerPaymentModel;
+import Payment.PayPerUse;
 import Server.Request;
 import User.User;
 
+import java.util.Collections;
 import java.util.List;
 
 public class JobSeeker extends User {
@@ -53,17 +55,21 @@ public class JobSeeker extends User {
 
     @Override
     public String writeReview(){
+        System.out.println("writeReview");
         return null;
     }
 
     @Override
     public String updateReview(){
+
+        System.out.println("updateReview");
         return null;
     }
 
     @Override
     public String updateProfile(){
-        return null;
+        System.out.println("updateProfile");
+        return "updateProfile";
     }
 
     // Constructor
@@ -71,15 +77,15 @@ public class JobSeeker extends User {
 
     }
 
-    public JobSeeker(Boolean openToWork, List<Review> reviews, List<Invoice> invoices, List<Integer> assignedJobAd) {
+    public JobSeeker(Boolean openToWork,Integer workingHours, Boolean fullTime, List<String> qualifications, Integer weeks) {
         this.openToWork = openToWork;
-        this.reviews = reviews;
-        this.invoices = invoices;
-        this.assignedJobAd = assignedJobAd;
+        this.reviews = Collections.EMPTY_LIST;;
+        this.invoices = Collections.EMPTY_LIST;;
+        this.assignedJobAd = Collections.EMPTY_LIST;;
 
         // composition
-        this.jobSeekerPreference = new JobSeekerPreference();
-        this.jobSeekerPaymentModel = (JobSeekerPaymentModel) new Object();
+        this.jobSeekerPreference = new JobSeekerPreference(workingHours,fullTime,qualifications,weeks);
+        this.jobSeekerPaymentModel = new PayPerUse();
     }
 
     // Getters and setters

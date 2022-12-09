@@ -1,8 +1,15 @@
 package Tracker;
 
+import Scheduler.Scheduler;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class ActiveJobSeekerStatusTracker {
+    private static ActiveJobSeekerStatusTracker single_instance = null;
+
     public Queue<Integer> activeJobSeekers;
 
     public Queue<Integer> getActiveJobSeekers() {
@@ -13,6 +20,15 @@ public class ActiveJobSeekerStatusTracker {
 
 
     // constructor
-    public ActiveJobSeekerStatusTracker() {
+
+
+    private ActiveJobSeekerStatusTracker() {
+        this.activeJobSeekers= new LinkedList<Integer>();
+    }
+
+    public static ActiveJobSeekerStatusTracker getInstance() {
+        if (single_instance == null)
+            single_instance = new ActiveJobSeekerStatusTracker();
+        return single_instance;
     }
 }

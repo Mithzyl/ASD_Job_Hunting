@@ -23,6 +23,10 @@ public class DatabaseConnector {
 
 
     // constructor
-    public DatabaseConnector() {
+    public DatabaseConnector(String connection, String url, String loginUser, String loginPassword) {
+        this.connection = connection;
+        this.url = url;
+        this.loginUser = loginUser;
+        this.loginPassword = loginPassword;
     }
 }

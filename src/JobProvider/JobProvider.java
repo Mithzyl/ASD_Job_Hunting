@@ -1,13 +1,13 @@
 package JobProvider;
 
-import Job.JobAd;
-import Job.Review;
 import Payment.Invoice;
+import Payment.JobProviderPayPerUse;
 import Payment.JobProviderPaymentModel;
 import Payment.PaymentProcessor;
 import Server.Request;
 import User.User;
 
+import java.util.Collections;
 import java.util.List;
 
 public class JobProvider extends User {
@@ -80,14 +80,12 @@ public class JobProvider extends User {
 
     // constructor
     public JobProvider() {
-    }
-
-    public JobProvider(List<String> jobs, List<Invoice> payments, PaymentProcessor paymentProcessor) {
-        this.jobs = jobs;
+        this.jobs = Collections.EMPTY_LIST;
 
         // composition
-        this.paymentModel = (JobProviderPaymentModel) new Object();
-        this.payments = payments;
-        this.paymentProcessor = paymentProcessor;
+        this.paymentModel = new JobProviderPayPerUse();
+        this.payments = Collections.EMPTY_LIST;
+        this.paymentProcessor = PaymentProcessor.getInstance();
     }
+
 }
