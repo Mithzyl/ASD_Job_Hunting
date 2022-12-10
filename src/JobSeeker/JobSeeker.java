@@ -9,6 +9,7 @@ import User.User;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class JobSeeker extends User {
 
@@ -18,73 +19,73 @@ public class JobSeeker extends User {
 
     private List<Invoice> invoices;
 
-    private List<Integer> assignedJobAd;
+    private List<Integer> assignedJobAds;
 
     // composition
-    private JobSeekerPreference jobSeekerPreference;
+    private final JobSeekerPreference jobSeekerPreference;
 
-    private JobSeekerPaymentModel jobSeekerPaymentModel;
+    private final JobSeekerPaymentModel jobSeekerPaymentModel;
 
 
-    public String updatePreference(){
+    public String updatePreference() {
         return null;
     }
 
-    public String respondJob(Boolean respond){
+    public String respondJob(Boolean respond) {
         return null;
     }
 
-    public String collectPayment(){
+    public String collectPayment() {
         return null;
     }
 
-    private List<Integer> listCompletedJobs(){
+    private List<Integer> listCompletedJobs() {
         return null;
     }
 
-    private String handOverRequest(){
-        return null;
-    }
-    public String receiveRequest(Request request){
+    private String handOverRequest() {
         return null;
     }
 
-    private String changeAvailability(Boolean status){
+    public String receiveRequest(Request request) {
+        return null;
+    }
+
+    private String changeAvailability(Boolean status) {
         return null;
     }
 
     @Override
-    public String writeReview(){
+    public String writeReview() {
         System.out.println("writeReview");
         return null;
     }
 
     @Override
-    public String updateReview(){
+    public String updateReview() {
 
         System.out.println("updateReview");
         return null;
     }
 
     @Override
-    public String updateProfile(){
+    public String updateProfile() {
         System.out.println("updateProfile");
         return "updateProfile";
     }
 
     // Constructor
-    public JobSeeker() {
-
-    }
-
-    public JobSeeker(Boolean openToWork,Integer workingHours, Boolean fullTime, List<String> qualifications, Integer weeks) {
+    public JobSeeker(Boolean openToWork, Integer workingHours, Boolean fullTime, List<String> qualifications, Integer weeks) {
         this.openToWork = openToWork;
-        this.reviews = Collections.EMPTY_LIST;;
-        this.invoices = Collections.EMPTY_LIST;;
-        this.assignedJobAd = Collections.EMPTY_LIST;;
+        this.reviews = Collections.EMPTY_LIST;
+        ;
+        this.invoices = Collections.EMPTY_LIST;
+        ;
+        this.assignedJobAds = Collections.EMPTY_LIST;
+        ;
 
         // composition
-        this.jobSeekerPreference = new JobSeekerPreference(workingHours,fullTime,qualifications,weeks);
+        this.jobSeekerPreference = new JobSeekerPreference(workingHours, fullTime, qualifications, weeks);
         this.jobSeekerPaymentModel = new PayPerUse();
     }
 
@@ -114,10 +115,15 @@ public class JobSeeker extends User {
     }
 
     public List<Integer> getAssignedJobAd() {
-        return assignedJobAd;
+        return assignedJobAds;
+    }
+
+    public void setAssignedJobAd(Integer assignedJobAd) {
+
+        this.assignedJobAds.add(assignedJobAd);
     }
 
     public void setAssignedJobAd(List<Integer> assignedJobAd) {
-        this.assignedJobAd = assignedJobAd;
+        this.assignedJobAds = assignedJobAd;
     }
 }

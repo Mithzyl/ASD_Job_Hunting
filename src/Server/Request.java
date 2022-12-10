@@ -1,5 +1,6 @@
 package Server;
 
+import Scheduler.RequestType;
 import User.User;
 
 public class Request<T> {
@@ -8,6 +9,9 @@ public class Request<T> {
     public T request;
 
     public String payload;
+
+    public RequestType requestType;
+
 
     private void updateDatabase(){}
 

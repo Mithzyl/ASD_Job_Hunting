@@ -1,5 +1,6 @@
 package JobProvider;
 
+import Job.JobAd;
 import Payment.Invoice;
 import Payment.JobProviderPayPerUse;
 import Payment.JobProviderPaymentModel;
@@ -7,6 +8,8 @@ import Payment.PaymentProcessor;
 import Server.Request;
 import User.User;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,6 +26,8 @@ public class JobProvider extends User {
 
     // methods
     public String createJobAd(){
+        //use factory pattern to initiate JobAd
+//        JobAd jobAd;
         return null;
     }
 
@@ -81,11 +86,11 @@ public class JobProvider extends User {
     // constructor
     public JobProvider() {
         this.jobs = Collections.EMPTY_LIST;
-
-        // composition
-        this.paymentModel = new JobProviderPayPerUse();
         this.payments = Collections.EMPTY_LIST;
         this.paymentProcessor = PaymentProcessor.getInstance();
+        // composition
+        this.paymentModel = new JobProviderPayPerUse();
+
     }
 
 }

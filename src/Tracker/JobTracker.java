@@ -2,11 +2,14 @@ package Tracker;
 
 import Job.JobAd;
 import Job.JobState;
+import Matcher.Matcher;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class JobTracker {
+    private static JobTracker single_instance = null;
+
     private List<JobAd> jobs;
 
     public List<Integer> listCompletedJob(String userId){
@@ -25,5 +28,10 @@ public class JobTracker {
     // constructor
     public JobTracker() {
 
+    }
+    public static JobTracker getInstance() {
+        if (single_instance == null)
+            single_instance = new JobTracker();
+        return single_instance;
     }
 }

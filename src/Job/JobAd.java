@@ -110,7 +110,7 @@ public class JobAd {
     }
 
     // constructor
-    public JobAd(String id, String description, Integer salary, String jobProviderId, Integer workingHours, Boolean fullTime, List<String> qualifications, Integer weeks) {
+    public JobAd(String description, Integer salary, String jobProviderId, Integer workingHours, Boolean fullTime, List<String> qualifications, Integer weeks) {
         this.id = Integer.toString(ID_GENERATOR.getAndIncrement());
         this.description = description;
         this.salary = salary;

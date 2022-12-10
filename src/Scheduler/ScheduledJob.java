@@ -2,7 +2,7 @@ package Scheduler;
 
 import java.sql.Timestamp;
 
-public class ScheduledJobs {
+public class ScheduledJob {
     private Timestamp notifyingTime;
 
     private String targetUserId;
@@ -13,6 +13,6 @@ public class ScheduledJobs {
 
 
     // constructor
-    public ScheduledJobs() {
+    public ScheduledJob() {
     }
 }

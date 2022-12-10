@@ -13,7 +13,7 @@ public class Scheduler {
 
     private Timestamp timestamp;
 
-    private List<ScheduledJobs> scheduledJobs;
+    private List<ScheduledJob> scheduledJobs;
 
     private void executeScheduleJob() {
     }
@@ -30,6 +30,10 @@ public class Scheduler {
     }
 
     public void receiveRequest(Request request) {
+        if (request.requestType == RequestType.SCHEDULER) {
+            ScheduledJob scheduledJob = new ScheduledJob();
+            this.scheduledJobs.add(scheduledJob);
+        }
     }
 
 

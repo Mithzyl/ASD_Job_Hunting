@@ -18,6 +18,14 @@ public class DebitCardPaymentGateway implements PaymentGateway{
 
     private String transactionId;
 
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
+    }
+
     @Override
     public String processPayment(List<Invoice> payment) {
         return transactionId;

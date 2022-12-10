@@ -1,6 +1,10 @@
 package Payment;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Invoice {
+    private static AtomicInteger ID_GENERATOR = new AtomicInteger(1000);
+
     private String paymentId;
 
     private Float paymentAmount;
@@ -22,5 +26,7 @@ public class Invoice {
     public void seeDetails(){}
 
     public Invoice() {
+        this.paymentId = Integer.toString(ID_GENERATOR.getAndIncrement());
+
     }
 }
