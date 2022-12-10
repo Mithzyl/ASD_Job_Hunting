@@ -16,12 +16,12 @@ public class ActiveJobSeekerStatusTracker {
         return null;
     }
 
-    public void addToQueue(Integer jobSeekerId){}
+    public void addToQueue(Integer jobSeekerId){
+        activeJobSeekers.add(jobSeekerId);
+    }
 
 
     // constructor
-
-
     private ActiveJobSeekerStatusTracker() {
         this.activeJobSeekers= new LinkedList<Integer>();
     }

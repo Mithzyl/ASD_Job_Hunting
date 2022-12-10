@@ -8,7 +8,6 @@ public class PaymentProcessor {
     public PaymentGateway gateway;
 
     public PaymentProcessor() {
-
         this.gateway = new DebitCardPaymentGateway();
     }
 

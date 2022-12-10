@@ -12,23 +12,27 @@ public class JobTracker {
 
     private List<JobAd> jobs;
 
-    public List<Integer> listCompletedJob(String userId){
+    public List<Integer> listCompletedJob(String userId) {
         return new ArrayList<>();
     }
 
-    public List<Integer> listUnassignedJob(String userId){
+    public List<Integer> listUnassignedJob(String userId) {
         return new ArrayList<>();
     }
 
-    public void addNewJob(JobAd jobAd){}
+    public void addNewJob(JobAd jobAd) {
+        jobs.add(jobAd);
+    }
 
-    public void updateJobStatus(JobState jobState){}
+    public void updateJobStatus(JobState jobState) {
+    }
 
 
     // constructor
     public JobTracker() {
-
+        jobs = new ArrayList<>();
     }
+
     public static JobTracker getInstance() {
         if (single_instance == null)
             single_instance = new JobTracker();
