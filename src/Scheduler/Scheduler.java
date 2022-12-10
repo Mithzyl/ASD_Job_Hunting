@@ -1,8 +1,7 @@
 package Scheduler;
 
-import Job.JobAd;
-import Reception.Reception;
 import Server.Request;
+import Server.RequestPayload;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -31,14 +30,14 @@ public class Scheduler {
 
     public void receiveRequest(Request request) {
         if (request.requestType == RequestType.SCHEDULER) {
-            ScheduledJob scheduledJob = new ScheduledJob();
-            this.scheduledJobs.add(scheduledJob);
+            this.scheduledJobs.add(request.payload.getScheduledJob());
         }
     }
 
 
     // constructor
     private Scheduler() {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         this.timestamp = timestamp;
         this.scheduledJobs = new ArrayList<>();
     }

@@ -1,5 +1,6 @@
 package Reception;
 
+import Scheduler.RequestType;
 import Server.Request;
 
 import java.util.Queue;
@@ -17,6 +18,9 @@ public class Reception {
     }
 
     public void addToQueue(Request request) {
+        if (request.requestType == RequestType.DATABASE) {
+            // contact database connector
+        }
     }
 
 

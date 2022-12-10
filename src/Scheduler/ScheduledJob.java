@@ -12,6 +12,12 @@ public class ScheduledJob {
     public void notify(NotificationType notificationType, String targetUserId){}
 
 
+    public ScheduledJob(Timestamp notifyingTime, String targetUserId, NotificationType notificationType) {
+        this.notifyingTime = notifyingTime;
+        this.targetUserId = targetUserId;
+        this.notificationType = notificationType;
+    }
+
     // constructor
     public ScheduledJob() {
     }

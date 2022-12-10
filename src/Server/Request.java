@@ -3,15 +3,12 @@ package Server;
 import Scheduler.RequestType;
 import User.User;
 
-public class Request<T> {
+public class Request {
     public User requesterId;
 
-    public T request;
-
-    public String payload;
+    public RequestPayload payload;
 
     public RequestType requestType;
-
 
     private void updateDatabase(){}
 
