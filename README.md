@@ -10,8 +10,8 @@ This is the monorepository for the Job Hunting Applications solution. It could b
 
 Described below is an overview of the necessary software for working with this repository. See the [Software Installation Guide](documentation/on-boarding/software-installation-guide.md) for what they do, how to install and configure them.
 
-- `Java version: 18.0.2.1` for developers running Windows.
-- `Apache Maven 3.8.6` dependency management tool for installing libary and building executable jar code.
+- `Java version: 18.0.2.1` This code base is written in Java.
+- `Apache Maven 3.8.6` dependency management tool for installing library and building executable jar code.
 
 ### On the choice of editor or IDE
 
