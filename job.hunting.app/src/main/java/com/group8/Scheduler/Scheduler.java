@@ -1,7 +1,6 @@
-package Scheduler;
+package com.group8.Scheduler;
 
-import Server.Request;
-import Server.RequestPayload;
+import com.group8.Server.Request;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -29,9 +28,9 @@ public class Scheduler {
     }
 
     public void receiveRequest(Request request) {
-        if (request.requestType == RequestType.SCHEDULER) {
-            this.scheduledJobs.add(request.payload.getScheduledJob());
-        }
+//        if (request.requestType == RequestType.SCHEDULER) {
+//            this.scheduledJobs.add(request.payload.getScheduledJob());
+//        }
     }
 
 

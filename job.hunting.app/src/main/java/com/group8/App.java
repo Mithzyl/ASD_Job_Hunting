@@ -1,8 +1,7 @@
 package com.group8;
 
-import Job.Review;
-import JobSeeker.JobSeeker;
-import Payment.Invoice;
+
+import com.group8.JobSeeker.JobSeeker;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package Payment;
+package com.group8.Payment;
 
 import java.util.Collections;
 import java.util.List;

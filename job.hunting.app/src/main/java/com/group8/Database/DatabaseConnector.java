@@ -1,4 +1,4 @@
-package Database;
+package com.group8.Database;
 
 public class DatabaseConnector {
     private String connection;

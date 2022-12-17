@@ -1,4 +1,4 @@
-package JobSeeker;
+package com.group8.JobSeeker;
 
 import java.util.List;
 

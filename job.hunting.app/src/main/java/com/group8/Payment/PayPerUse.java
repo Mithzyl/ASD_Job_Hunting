@@ -1,4 +1,4 @@
-package Payment;
+package com.group8.Payment;
 
 public class PayPerUse implements JobSeekerPaymentModel{
     @Override

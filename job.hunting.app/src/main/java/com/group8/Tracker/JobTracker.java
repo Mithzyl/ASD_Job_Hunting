@@ -1,8 +1,8 @@
-package Tracker;
+package com.group8.Tracker;
 
-import Job.JobAd;
-import Job.JobState;
-import Matcher.Matcher;
+
+import com.group8.Job.JobAd;
+import com.group8.Job.JobState;
 
 import java.util.ArrayList;
 import java.util.List;

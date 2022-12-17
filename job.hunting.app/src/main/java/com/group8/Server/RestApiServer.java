@@ -1,8 +1,4 @@
-package Server;
-
-import Scheduler.Scheduler;
-
-import java.util.ArrayList;
+package com.group8.Server;
 
 public class RestApiServer<T, V, R> {
     private static RestApiServer single_instance = null;

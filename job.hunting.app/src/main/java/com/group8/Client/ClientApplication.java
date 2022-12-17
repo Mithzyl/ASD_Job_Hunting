@@ -1,4 +1,4 @@
-package Client;
+package com.group8.Client;
 
 public class ClientApplication {
     private String url;

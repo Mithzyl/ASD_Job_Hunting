@@ -1,15 +1,14 @@
-package JobSeeker;
+package com.group8.JobSeeker;
 
-import Job.Review;
-import Payment.Invoice;
-import Payment.JobSeekerPaymentModel;
-import Payment.PayPerUse;
-import Server.Request;
-import User.User;
+import com.group8.Job.Review;
+import com.group8.Payment.Invoice;
+import com.group8.Payment.JobSeekerPaymentModel;
+import com.group8.Payment.PayPerUse;
+import com.group8.Server.Request;
+import com.group8.User.User;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class JobSeeker extends User {
 
@@ -75,6 +74,7 @@ public class JobSeeker extends User {
 
     // Constructor
     public JobSeeker(Boolean openToWork, Integer workingHours, Boolean fullTime, List<String> qualifications, Integer weeks) {
+        super();
         this.openToWork = openToWork;
         this.reviews = Collections.EMPTY_LIST;
         ;

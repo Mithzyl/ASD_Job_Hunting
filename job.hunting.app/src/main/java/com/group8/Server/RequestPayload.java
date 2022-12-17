@@ -1,9 +1,10 @@
-package Server;
+package com.group8.Server;
 
-import Job.JobAd;
-import Job.Review;
-import Scheduler.NotificationType;
-import Scheduler.ScheduledJob;
+import com.group8.Job.JobAd;
+import com.group8.Job.Review;
+import com.group8.Scheduler.NotificationType;
+import com.group8.Scheduler.ScheduledJob;
+
 import java.sql.Timestamp;
 import java.util.List;
 

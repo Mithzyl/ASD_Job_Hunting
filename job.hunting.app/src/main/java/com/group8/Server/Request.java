@@ -1,7 +1,8 @@
-package Server;
+package com.group8.Server;
 
-import Scheduler.RequestType;
-import User.User;
+
+import com.group8.Scheduler.RequestType;
+import com.group8.User.User;
 
 public class Request {
     public User requesterId;

@@ -1,4 +1,4 @@
-package Job;
+package com.group8.Job;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;

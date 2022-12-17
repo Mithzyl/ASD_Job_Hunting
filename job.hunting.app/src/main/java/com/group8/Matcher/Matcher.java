@@ -1,12 +1,9 @@
-package Matcher;
+package com.group8.Matcher;
 
-import Job.JobAd;
-import JobSeeker.JobSeeker;
-import Scheduler.*;
-import Server.Request;
-import Tracker.ActiveJobSeekerStatusTracker;
-import Server.Request;
-import Server.RequestPayload;
+import com.group8.Job.JobAd;
+import com.group8.Scheduler.RequestType;
+import com.group8.Server.Request;
+import com.group8.Tracker.ActiveJobSeekerStatusTracker;
 
 import java.util.List;
 import java.util.Queue;
@@ -37,9 +34,9 @@ public class Matcher {
     }
 
     public void receiveRequest(Request request) {
-        if (request.requestType == RequestType.MATHCER) {
-            // do matching and invite operations
-        }
+//        if (request.requestType.equals() RequestType.MATHCER) {
+//            // do matching and invite operations
+//        }
     }
 
     public void getUnassignedJobAds() {

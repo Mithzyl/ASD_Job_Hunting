@@ -1,4 +1,4 @@
-package Scheduler;
+package com.group8.Scheduler;
 
 public enum RequestType {
     MATHCER,

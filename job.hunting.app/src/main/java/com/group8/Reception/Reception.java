@@ -1,8 +1,8 @@
-package Reception;
+package com.group8.Reception;
 
-import Database.DatabaseConnector;
-import Scheduler.RequestType;
-import Server.Request;
+import com.group8.Database.DatabaseConnector;
+import com.group8.Scheduler.RequestType;
+import com.group8.Server.Request;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -17,22 +17,22 @@ public class Reception {
     }
 
     public void takeAction(Request request) {
-        if (request.requestType == RequestType.DATABASE) {
-            // contact database connector
-            updateDatabase();
-        }
-        if (request.requestType == RequestType.SCHEDULER) {
-            // contact scheduler
-        }
-        if (request.requestType == RequestType.MATHCER) {
-            // contact matcher
-        }
-        if (request.requestType == RequestType.JOBPROVIDER) {
-            // contact jobprovider
-        }
-        if (request.requestType == RequestType.JOBSEEKER) {
-            // contact jobseeker
-        }
+//        if (request.requestType.equal( RequestType.DATABASE)) {
+//            // contact database connector
+//            updateDatabase();
+//        }
+//        if (request.requestType == RequestType.SCHEDULER) {
+//            // contact scheduler
+//        }
+//        if (request.requestType == RequestType.MATHCER) {
+//            // contact matcher
+//        }
+//        if (request.requestType == RequestType.JOBPROVIDER) {
+//            // contact jobprovider
+//        }
+//        if (request.requestType == RequestType.JOBSEEKER) {
+//            // contact jobseeker
+//        }
     }
 
     public void addToQueue(Request request) {

@@ -1,9 +1,5 @@
-package Tracker;
+package com.group8.Tracker;
 
-import Scheduler.Scheduler;
-
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 

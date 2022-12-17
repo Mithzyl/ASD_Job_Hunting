@@ -1,4 +1,4 @@
-package Scheduler;
+package com.group8.Scheduler;
 
 import java.sql.Timestamp;
 

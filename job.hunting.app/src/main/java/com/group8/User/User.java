@@ -1,4 +1,4 @@
-package User;
+package com.group8.User;
 
 public class User<T> {
 

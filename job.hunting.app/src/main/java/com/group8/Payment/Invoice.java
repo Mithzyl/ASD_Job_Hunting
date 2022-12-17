@@ -1,4 +1,4 @@
-package Payment;
+package com.group8.Payment;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

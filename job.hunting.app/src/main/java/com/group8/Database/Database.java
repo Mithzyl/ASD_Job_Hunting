@@ -1,6 +1,4 @@
-package Database;
-
-import Scheduler.Scheduler;
+package com.group8.Database;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,12 +1,11 @@
-package JobProvider;
+package com.group8.JobProvider;
 
-import Job.JobAd;
-import Payment.Invoice;
-import Payment.JobProviderPayPerUse;
-import Payment.JobProviderPaymentModel;
-import Payment.PaymentProcessor;
-import Server.Request;
-import User.User;
+import com.group8.Payment.Invoice;
+import com.group8.Payment.JobProviderPayPerUse;
+import com.group8.Payment.JobProviderPaymentModel;
+import com.group8.Payment.PaymentProcessor;
+import com.group8.Server.Request;
+import com.group8.User.User;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -85,6 +84,7 @@ public class JobProvider extends User {
 
     // constructor
     public JobProvider() {
+        super();
         this.jobs = Collections.EMPTY_LIST;
         this.payments = Collections.EMPTY_LIST;
         this.paymentProcessor = PaymentProcessor.getInstance();

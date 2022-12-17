@@ -1,6 +1,4 @@
-package Payment;
-
-import Reception.Reception;
+package com.group8.Payment;
 
 import java.util.List;
 
