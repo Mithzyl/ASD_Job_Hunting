@@ -1,10 +1,12 @@
 package com.group8.JobProvider;
 
+import com.group8.Job.JobAd;
 import com.group8.Payment.Invoice;
 import com.group8.Payment.JobProviderPayPerUse;
 import com.group8.Payment.JobProviderPaymentModel;
 import com.group8.Payment.PaymentProcessor;
 import com.group8.Server.Request;
+import com.group8.Tracker.JobTracker;
 import com.group8.User.User;
 
 import java.lang.reflect.Array;
@@ -26,7 +28,10 @@ public class JobProvider extends User {
     // methods
     public String createJobAd(){
         //use factory pattern to initiate JobAd
-//        JobAd jobAd;
+        //use hard coded object for testing
+        JobAd jobAd = new JobAd("testing", 10000, "1", 40, true, Arrays.asList("non-experience"), 30);
+        JobTracker jobTracker= JobTracker.getInstance();
+        jobTracker.addNewJob(jobAd);
         return null;
     }
 

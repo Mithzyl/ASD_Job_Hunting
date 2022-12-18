@@ -21,10 +21,14 @@ public class JobTracker {
     }
 
     public void addNewJob(JobAd jobAd) {
+        jobAd.setState(JobState.OPEN);
         jobs.add(jobAd);
     }
 
-    public void updateJobStatus(JobState jobState) {
+    public void updateJobStatus(JobAd jobAd,JobState jobState) {
+        jobs.remove(jobAd);
+        jobAd.setState(jobState);
+        jobs.add(jobAd);
     }
 
 
