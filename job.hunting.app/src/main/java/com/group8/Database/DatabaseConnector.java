@@ -9,17 +9,35 @@ public class DatabaseConnector {
 
     private String loginPassword;
 
-    public void createSqlStatement(String statement){}
+    public void createSqlStatement(String statement){
+        System.out.println("createSqlStatement()");
 
-    public void getConnection(String userName, String password){}
+    }
 
-    public void closeConnection(String userName, String password){}
+    public void getConnection(String userName, String password){
+        System.out.println("getConnection()");
 
-    public void executeSqlStatement(String statement){}
+    }
 
-    public void commit(){}
+    public void closeConnection(String userName, String password){
+        System.out.println("closeConnection()");
 
-    public void rollback(){}
+    }
+
+    public void executeSqlStatement(String statement){
+        System.out.println("executeSqlStatement()");
+
+    }
+
+    public void commit(){
+        System.out.println("commit()");
+
+    }
+
+    public void rollback(){
+        System.out.println("rollback()");
+
+    }
 
 
     // constructor

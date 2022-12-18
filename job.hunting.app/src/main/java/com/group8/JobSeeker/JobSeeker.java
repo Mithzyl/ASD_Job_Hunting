@@ -46,11 +46,16 @@ public class JobSeeker extends User {
     }
 
     public String receiveRequest(Request request) {
-        return null;
+        respondJob(true);
+        return "yes";
     }
 
     private String changeAvailability(Boolean status) {
         return null;
+    }
+
+    public JobSeekerPreference getJobSeekerPreference() {
+        return jobSeekerPreference;
     }
 
     @Override

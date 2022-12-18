@@ -8,15 +8,30 @@ public class Database {
 
     private List<String> tableNames;
 
-    public void persist(){}
+    public void persist(){
+        System.out.println("persist()");
 
-    public void makeConnection(String userName, String password){}
+    }
 
-    public void fetch(){}
+    public void makeConnection(String userName, String password){
+        System.out.println("makeConnection()");
 
-    public void update(){}
+    }
 
-    public void delete(){}
+    public void fetch(){
+        System.out.println("fetch()");
+
+    }
+
+    public void update(){
+        System.out.println("update()");
+
+    }
+
+    public void delete(){
+        System.out.println("delete()");
+
+    }
 
 
     private Database() {

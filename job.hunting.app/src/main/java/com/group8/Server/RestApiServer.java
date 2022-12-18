@@ -1,11 +1,19 @@
 package com.group8.Server;
 
-public class RestApiServer<T, V, R> {
+public class RestApiServer {
     private static RestApiServer single_instance = null;
 
-    public R listen(T HttpRequest, V HttpMethod){return null;}
+    public void listen(Object HttpRequest, Object HttpMethod) throws InterruptedException {
+        while(true){
+            Thread.sleep(2000);
+            System.out.println("listening.......");
+        }
+    }
 
-    private R process(T HttpRequest, V HttpMethod){return null;}
+    private Object process(Object HttpRequest, Object HttpMethod){
+        Object HttpResponse = new Object();
+        return HttpResponse;
+    }
 
 
     // constructor

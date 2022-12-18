@@ -65,7 +65,7 @@ public class JobProviderSubscription implements JobProviderPaymentModel {
 
     @Override
     public Float calculatePayment() {
-//logic to pay price to renew subscriptio
+    //logic to pay price to renew subscription
         return null;
     }
 }

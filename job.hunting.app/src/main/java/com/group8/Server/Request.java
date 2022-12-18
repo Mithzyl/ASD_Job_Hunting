@@ -17,6 +17,12 @@ public class Request {
 
     public void addToQueue(Request request){}
 
+    public Request(User requesterId, RequestPayload payload, RequestType requestType) {
+        this.requesterId = requesterId;
+        this.payload = payload;
+        this.requestType = requestType;
+    }
+
     // constructor
     public Request() {
     }

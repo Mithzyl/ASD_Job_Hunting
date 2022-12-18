@@ -28,9 +28,9 @@ public class Scheduler {
     }
 
     public void receiveRequest(Request request) {
-//        if (request.requestType == RequestType.SCHEDULER) {
-//            this.scheduledJobs.add(request.payload.getScheduledJob());
-//        }
+        if (request.requestType == RequestType.SCHEDULER) {
+            this.scheduledJobs.add(request.payload.getScheduledJob());
+        }
     }
 
 

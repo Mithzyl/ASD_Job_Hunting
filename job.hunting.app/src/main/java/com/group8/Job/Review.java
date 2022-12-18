@@ -13,9 +13,14 @@ public class Review {
 
     public String reviewedToId;
 
-    public void writeReview(){}
+    public void writeReview(){
+        System.out.println("writeReview()");
+    }
 
-    public void updateReview(){}
+    public void updateReview(){
+        System.out.println("updateReview()");
+
+    }
 
 
     // constructor

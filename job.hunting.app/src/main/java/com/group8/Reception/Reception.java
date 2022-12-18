@@ -1,9 +1,11 @@
 package com.group8.Reception;
 
 import com.group8.Database.DatabaseConnector;
+import com.group8.JobSeeker.JobSeeker;
 import com.group8.Scheduler.RequestType;
 import com.group8.Server.Request;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,22 +19,25 @@ public class Reception {
     }
 
     public void takeAction(Request request) {
-//        if (request.requestType.equal( RequestType.DATABASE)) {
-//            // contact database connector
-//            updateDatabase();
-//        }
-//        if (request.requestType == RequestType.SCHEDULER) {
-//            // contact scheduler
-//        }
-//        if (request.requestType == RequestType.MATHCER) {
-//            // contact matcher
-//        }
-//        if (request.requestType == RequestType.JOBPROVIDER) {
-//            // contact jobprovider
-//        }
-//        if (request.requestType == RequestType.JOBSEEKER) {
-//            // contact jobseeker
-//        }
+        if (request.requestType== RequestType.DATABASE) {
+            // contact database connector
+            updateDatabase();
+        }
+        if (request.requestType == RequestType.SCHEDULER) {
+            // contact scheduler
+        }
+        if (request.requestType == RequestType.MATHCER) {
+            // contact matcher
+        }
+        if (request.requestType == RequestType.JOBPROVIDER) {
+            // contact jobprovider
+        }
+        if (request.requestType == RequestType.JOBSEEKER) {
+            // contact jobseeker
+            //get instance of JobSeeker
+            JobSeeker jobSeeker = new JobSeeker(true, 40, true, Arrays.asList("non-experience"), 30);
+            jobSeeker.receiveRequest(request);
+        }
     }
 
     public void addToQueue(Request request) {

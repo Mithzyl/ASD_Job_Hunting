@@ -13,7 +13,7 @@ public class JobAd {
 
     public Integer salary;
 
-    public WorkDetails status;
+    public WorkDetails workDetails;
 
     public String jobProviderId;
 
@@ -22,6 +22,8 @@ public class JobAd {
     public Review review;
 
     public JobState state;
+
+
 
     public void updateJobInfo() {
     }
@@ -33,7 +35,7 @@ public class JobAd {
                 "id='" + id + '\'' +
                 ", description='" + description + '\'' +
                 ", salary=" + salary +
-                ", status=" + status +
+                ", status=" + workDetails +
                 ", jobProviderId='" + jobProviderId + '\'' +
                 ", workDetailsId='" + workDetailsId + '\'' +
                 ", review=" + review +
@@ -45,12 +47,12 @@ public class JobAd {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         JobAd jobAd = (JobAd) o;
-        return Objects.equals(id, jobAd.id) && Objects.equals(description, jobAd.description) && Objects.equals(salary, jobAd.salary) && Objects.equals(status, jobAd.status) && Objects.equals(jobProviderId, jobAd.jobProviderId) && Objects.equals(workDetailsId, jobAd.workDetailsId) && Objects.equals(review, jobAd.review);
+        return Objects.equals(id, jobAd.id) && Objects.equals(description, jobAd.description) && Objects.equals(salary, jobAd.salary) && Objects.equals(workDetails, jobAd.workDetails) && Objects.equals(jobProviderId, jobAd.jobProviderId) && Objects.equals(workDetailsId, jobAd.workDetailsId) && Objects.equals(review, jobAd.review);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, salary, status, jobProviderId, workDetailsId, review);
+        return Objects.hash(id, description, salary, workDetails, jobProviderId, workDetailsId, review);
     }
 
     public String getId() {
@@ -77,12 +79,12 @@ public class JobAd {
         this.salary = salary;
     }
 
-    public WorkDetails getStatus() {
-        return status;
+    public WorkDetails getWorkDetails() {
+        return workDetails;
     }
 
-    public void setStatus(WorkDetails status) {
-        this.status = status;
+    public void setWorkDetails(WorkDetails workDetails) {
+        this.workDetails = workDetails;
     }
 
     public String getJobProviderId() {
@@ -101,6 +103,14 @@ public class JobAd {
         this.workDetailsId = workDetailsId;
     }
 
+    public JobState getState() {
+        return state;
+    }
+
+    public void setState(JobState state) {
+        this.state = state;
+    }
+
     public Review getReview() {
         return review;
     }
@@ -116,7 +126,7 @@ public class JobAd {
         this.salary = salary;
         this.state = JobState.OPEN;
         // composition
-        this.status = new WorkDetails(workingHours, fullTime, qualifications, weeks);
+        this.workDetails = new WorkDetails(workingHours, fullTime, qualifications, weeks);
         this.jobProviderId = jobProviderId;
         this.workDetailsId = workDetailsId;
         this.review = review;

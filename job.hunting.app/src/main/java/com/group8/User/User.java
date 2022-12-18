@@ -1,7 +1,8 @@
 package com.group8.User;
 
-public class User<T> {
+public class User {
 
+    private Integer id;
     private String userName;
 
     private String password;
@@ -10,30 +11,29 @@ public class User<T> {
 
     private String email;
 
-    private T paymentModel;
-
     public User() {
     }
 
-    public User(String userName, String password, Boolean status, String email, T paymentModel) {
+    public User(String userName, String password, Boolean status, String email) {
         this.userName = userName;
         this.password = password;
         this.status = status;
         this.email = email;
-        this.paymentModel = paymentModel;
     }
 
     public String writeReview() {
+//get input from user
         return null;
     }
 
     // TODO: review parameter
-    public String updateReview(){
+    public String updateReview() {
+//get updated review from user
 
         return null;
     }
 
-    public String updateProfile(){
+    public String updateProfile() {
         return null;
     }
 
@@ -69,14 +69,12 @@ public class User<T> {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public T getPaymentModel() {
-        return paymentModel;
+    public Integer getId() {
+        return id;
     }
 
-    public void setPaymentModel(T paymentModel) {
-        this.paymentModel = paymentModel;
+    public void setId(Integer id) {
+        this.id = id;
     }
-
 
 }
