@@ -3,6 +3,11 @@ package com.group8.Tracker;
 
 import com.group8.Job.JobAd;
 import com.group8.Job.JobState;
+import com.group8.Matcher.Matcher;
+import com.group8.Scheduler.RequestType;
+import com.group8.Server.Request;
+import com.group8.Server.RequestPayload;
+import com.group8.User.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +28,7 @@ public class JobTracker {
     public void addNewJob(JobAd jobAd) {
         jobAd.setState(JobState.OPEN);
         jobs.add(jobAd);
+        Matcher.getInstance().receiveRequest(new Request(new User("prai","pwd",true,"prai931024@gmail.com"),new RequestPayload(jobAd), RequestType.MATHCER));
     }
 
     public void updateJobStatus(JobAd jobAd,JobState jobState) {
