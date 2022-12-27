@@ -4,6 +4,7 @@ import com.group8.Job.JobAd;
 import com.group8.Job.JobState;
 import com.group8.Job.WorkDetails;
 import com.group8.JobSeeker.JobSeeker;
+import com.group8.JobSeeker.JobSeekerPreference;
 import com.group8.Reception.Reception;
 import com.group8.Scheduler.RequestType;
 import com.group8.Server.Request;
@@ -24,12 +25,22 @@ public class Matcher {
     public List<Integer> jobAds;
     private ActiveJobSeekerStatusTracker jobSeekerStatusTracker;
 
-    public List<Integer> match(JobAd jobAd) {
-        Queue<Integer> jobSeekersIds = jobSeekerStatusTracker.getActiveJobSeekers();
-        while (jobSeekersIds.isEmpty()) {
-            int candidateJobSeeker = jobSeekersIds.remove();
+    public List<JobSeeker> match(JobAd jobAd) {
+        List<JobSeeker> candidateJobSeekers = new ArrayList<>();
+        Queue<Integer> activeJobSeekers = jobSeekerStatusTracker.getActiveJobSeekers();
+        WorkDetails workDetails = jobAd.getWorkDetails();
+
+        for (int jobSeekerID : activeJobSeekers) {
+            //get JobSeeker instance using JobSeekerID
+            //for example: using hardcoded dummy JobSeeker instance.
+            JobSeeker jobSeeker = new JobSeeker(true, 40, true, Arrays.asList("non-experience"), 30);
+            JobSeekerPreference userPreference=jobSeeker.getJobSeekerPreference();
+
+            if (userPreference.equals(workDetails)) {
+                candidateJobSeekers.add(jobSeeker);
+            }
         }
-        return null;
+        return candidateJobSeekers;
     }
 
     public void invite(Integer jobSeekerId) {
@@ -47,30 +58,22 @@ public class Matcher {
     }
 
     public void receiveRequest(Request request) {
+        //stubbing for testing.
         JobAd jobAd = new JobAd("testing", 10000, "1", 40, true, Arrays.asList("non-experience"), 30);
         if (request.requestType == RequestType.MATHCER) {
             // do match operations
             //dummy hardcoded JobAd for testing
-
-            List<JobSeeker> candidateJobSeekers = new ArrayList<>();
-            for (int jobSeekerID : jobSeekerStatusTracker.getActiveJobSeekers()) {
-                //get JobSeeker instance using JobSeekerID
-                //for example: using hardcoded dummy JobSeeker instance.
-                JobSeeker jobSeeker = new JobSeeker(true, 40, true, Arrays.asList("non-experience"), 30);
-                WorkDetails workDetails = jobAd.getWorkDetails();
-                if (workDetails.equals(jobSeeker.getJobSeekerPreference())) {
-                    candidateJobSeekers.add(jobSeeker);
-                }
-            }
-            //do invite operations
+            List<JobSeeker> candidateJobSeekers=match(jobAd);
             for (JobSeeker candidateJobSeeker : candidateJobSeekers) {
                 invite(candidateJobSeeker.getId());
+                // create request for creating job
+                Request jobseekerrequest= new Request(new User(),new RequestPayload(),RequestType.JOBSEEKER);
+                Reception.getInstance().addToQueue(jobseekerrequest);
                 if (jobAd.getState() == JobState.ASSIGNED) {
                     // do not send invitations once jobAd is assigned
                     break;
                 }
             }
-
 
         }
     }
@@ -88,6 +91,10 @@ public class Matcher {
         if (single_instance == null)
             single_instance = new Matcher();
         return single_instance;
+    }
+
+    public void invite(int jobSeekerID){
+        //do invite operations
     }
 
 }

@@ -28,7 +28,7 @@ public class DebitCardPaymentGateway implements PaymentGateway{
 
     @Override
     public String processPayment(List<Invoice> payment) {
-
+//get input details about cardNumber, cvc, expiryDate,
         return transactionId;
     }
 }
