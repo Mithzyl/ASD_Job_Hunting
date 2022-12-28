@@ -43,11 +43,13 @@ public class Matcher {
         return candidateJobSeekers;
     }
 
-    public void invite(Integer jobSeekerId) {
+    public void invite(Integer jobSeekerId,JobAd jobAd ) {
         Reception reception=Reception.getInstance();
-        //get instance of user from jobSeekerID
+        //dummy hardcoded user for testing that has jobSeekerId
         User user = new User();
-        Request invitationsRequest= new Request(user,new RequestPayload(),RequestType.JOBSEEKER);
+        user.setId(jobSeekerId);
+        //send invitations Requests to receptions
+        Request invitationsRequest= new Request(user,new RequestPayload(jobAd),RequestType.JOBSEEKER);
         reception.addToQueue(invitationsRequest);
     }
 
@@ -65,10 +67,7 @@ public class Matcher {
             //dummy hardcoded JobAd for testing
             List<JobSeeker> candidateJobSeekers=match(jobAd);
             for (JobSeeker candidateJobSeeker : candidateJobSeekers) {
-                invite(candidateJobSeeker.getId());
-                // create request for creating job
-                Request jobseekerrequest= new Request(new User(),new RequestPayload(),RequestType.JOBSEEKER);
-                Reception.getInstance().addToQueue(jobseekerrequest);
+                invite(candidateJobSeeker.getId(),jobAd);
                 if (jobAd.getState() == JobState.ASSIGNED) {
                     // do not send invitations once jobAd is assigned
                     break;
