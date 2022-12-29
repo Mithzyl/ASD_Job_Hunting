@@ -60,8 +60,7 @@ public class Matcher {
     }
 
     public void receiveRequest(Request request) {
-        //stubbing for testing.
-        JobAd jobAd = new JobAd("testing", 10000, "1", 40, true, Arrays.asList("non-experience"), 30);
+        JobAd jobAd = request.payload.getJobAd();
         if (request.requestType == RequestType.MATHCER) {
             // do match operations
             //dummy hardcoded JobAd for testing
