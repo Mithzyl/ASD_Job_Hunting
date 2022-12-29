@@ -73,7 +73,6 @@ public class Matcher {
                     break;
                 }
             }
-
         }
     }
 
@@ -91,9 +90,4 @@ public class Matcher {
             single_instance = new Matcher();
         return single_instance;
     }
-
-    public void invite(int jobSeekerID){
-        //do invite operations
-    }
-
 }
