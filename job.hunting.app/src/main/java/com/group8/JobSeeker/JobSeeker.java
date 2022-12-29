@@ -1,10 +1,13 @@
 package com.group8.JobSeeker;
 
 import com.group8.Job.Review;
+import com.group8.Job.JobAd;
+import com.group8.Job.JobState;
 import com.group8.Payment.Invoice;
 import com.group8.Payment.JobSeekerPaymentModel;
 import com.group8.Payment.PayPerUse;
 import com.group8.Server.Request;
+import com.group8.Tracker.JobTracker;
 import com.group8.User.User;
 
 import java.util.Collections;
@@ -29,8 +32,11 @@ public class JobSeeker extends User {
         return null;
     }
 
-    public String respondJob(Boolean respond) {
-        return null;
+    public String respondJob(Boolean respond, Request request) {
+	JobAd jobAd = request.payload.getJobAd();
+	JobTracker jobTracker = JobTracker.getInstance();
+	jobTracker.updateJobStatus(jobAd, JobState.ASSIGNED);
+	return null;
     }
 
     public String collectPayment() {
@@ -46,8 +52,8 @@ public class JobSeeker extends User {
     }
 
     public String receiveRequest(Request request) {
-        respondJob(true);
-        return "yes";
+        respondJob(true, request);
+	return "yes";
     }
 
     private String changeAvailability(Boolean status) {

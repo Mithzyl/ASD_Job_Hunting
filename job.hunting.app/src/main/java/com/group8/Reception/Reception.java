@@ -34,8 +34,7 @@ public class Reception {
         }
         if (request.requestType == RequestType.JOBSEEKER) {
             // contact jobseeker
-            //get instance of JobSeeker
-            JobSeeker jobSeeker = new JobSeeker(true, 40, true, Arrays.asList("non-experience"), 30);
+            JobSeeker jobSeeker = (JobSeeker) request.requesterId;
             jobSeeker.receiveRequest(request);
         }
     }

@@ -9,7 +9,7 @@ public class ActiveJobSeekerStatusTracker {
     public Queue<Integer> activeJobSeekers;
 
     public Queue<Integer> getActiveJobSeekers() {
-        return null;
+        return activeJobSeekers;
     }
 
     public void addToQueue(Integer jobSeekerId){
