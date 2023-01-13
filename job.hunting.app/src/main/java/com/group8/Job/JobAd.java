@@ -2,6 +2,7 @@ package com.group8.Job;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class JobAd {
@@ -19,7 +20,7 @@ public class JobAd {
 
     public String workDetailsId;
 
-    public Review review;
+    public List<Review> reviews;
 
     public JobState state;
 
@@ -38,7 +39,7 @@ public class JobAd {
                 ", status=" + workDetails +
                 ", jobProviderId='" + jobProviderId + '\'' +
                 ", workDetailsId='" + workDetailsId + '\'' +
-                ", review=" + review +
+                ", review=" + reviews +
                 '}';
     }
 
@@ -47,12 +48,12 @@ public class JobAd {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         JobAd jobAd = (JobAd) o;
-        return Objects.equals(id, jobAd.id) && Objects.equals(description, jobAd.description) && Objects.equals(salary, jobAd.salary) && Objects.equals(workDetails, jobAd.workDetails) && Objects.equals(jobProviderId, jobAd.jobProviderId) && Objects.equals(workDetailsId, jobAd.workDetailsId) && Objects.equals(review, jobAd.review);
+        return Objects.equals(id, jobAd.id) && Objects.equals(description, jobAd.description) && Objects.equals(salary, jobAd.salary) && Objects.equals(workDetails, jobAd.workDetails) && Objects.equals(jobProviderId, jobAd.jobProviderId) && Objects.equals(workDetailsId, jobAd.workDetailsId) && Objects.equals(reviews, jobAd.reviews);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, salary, workDetails, jobProviderId, workDetailsId, review);
+        return Objects.hash(id, description, salary, workDetails, jobProviderId, workDetailsId, reviews);
     }
 
     public String getId() {
@@ -111,12 +112,12 @@ public class JobAd {
         this.state = state;
     }
 
-    public Review getReview() {
-        return review;
+    public List<Review> getReviews() {
+        return reviews;
     }
 
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.reviews.add(review);
     }
 
     // constructor
@@ -129,6 +130,6 @@ public class JobAd {
         this.workDetails = new WorkDetails(workingHours, fullTime, qualifications, weeks);
         this.jobProviderId = jobProviderId;
         this.workDetailsId = workDetailsId;
-        this.review = review;
+        this.reviews = new ArrayList<Review>();
     }
 }

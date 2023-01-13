@@ -43,7 +43,7 @@ public class JobProvider extends User {
         return null;
     }
 
-    public String generateInvoice(){
+    private String generateInvoice(){
         return null;
     }
 

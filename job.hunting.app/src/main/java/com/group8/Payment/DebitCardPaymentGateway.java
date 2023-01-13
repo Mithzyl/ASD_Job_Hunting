@@ -6,7 +6,7 @@ import java.util.List;
 public class DebitCardPaymentGateway implements PaymentGateway{
     private String paymentId;
 
-    private Float Amount;
+    private Float amount;
 
     private Integer cardNumber;
 

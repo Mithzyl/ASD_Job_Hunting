@@ -6,9 +6,9 @@ import java.util.List;
 public class SwishPaymentGateway implements PaymentGateway{
     private String paymentId;
 
-    private Float Amount;
+    private Float amount;
 
-    private String MobileNumber;
+    private String mobileNumber;
 
     private Boolean success;
 

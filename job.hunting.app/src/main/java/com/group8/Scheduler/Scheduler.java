@@ -22,8 +22,6 @@ public class Scheduler {
     private void checkTime() {
     }
 
-    ;
-
     private void handOverRequest(Request request) {
     }
 

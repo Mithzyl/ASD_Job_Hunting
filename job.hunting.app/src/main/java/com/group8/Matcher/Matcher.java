@@ -25,7 +25,7 @@ public class Matcher {
     public List<Integer> jobAds;
     private ActiveJobSeekerStatusTracker jobSeekerStatusTracker;
 
-    public List<JobSeeker> match(JobAd jobAd) {
+    private List<JobSeeker> match(JobAd jobAd) {
         List<JobSeeker> candidateJobSeekers = new ArrayList<>();
         Queue<Integer> activeJobSeekers = jobSeekerStatusTracker.getActiveJobSeekers();
         WorkDetails workDetails = jobAd.getWorkDetails();
@@ -43,7 +43,7 @@ public class Matcher {
         return candidateJobSeekers;
     }
 
-    public void invite(JobSeeker jobSeeker,JobAd jobAd ) {
+    private void invite(JobSeeker jobSeeker,JobAd jobAd ) {
         Reception reception=Reception.getInstance();
         Request invitationsRequest= new Request(jobSeeker,new RequestPayload(jobAd),RequestType.JOBSEEKER);
         reception.addToQueue(invitationsRequest);

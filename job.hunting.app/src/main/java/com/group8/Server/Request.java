@@ -11,12 +11,6 @@ public class Request {
 
     public RequestType requestType;
 
-    private void updateDatabase(){}
-
-    public void takeAction(Request request, String payload){}
-
-    public void addToQueue(Request request){}
-
     public Request(User requesterId, RequestPayload payload, RequestType requestType) {
         this.requesterId = requesterId;
         this.payload = payload;

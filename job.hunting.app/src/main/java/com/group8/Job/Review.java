@@ -13,6 +13,8 @@ public class Review {
 
     public String reviewedToId;
 
+    public Integer reviewRating;
+
     public void writeReview(){
         System.out.println("writeReview()");
     }

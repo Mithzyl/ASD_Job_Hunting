@@ -33,10 +33,10 @@ public class JobSeeker extends User {
     }
 
     public String respondJob(Boolean respond, Request request) {
-	JobAd jobAd = request.payload.getJobAd();
-	JobTracker jobTracker = JobTracker.getInstance();
-	jobTracker.updateJobStatus(jobAd, JobState.ASSIGNED);
-	return null;
+        JobAd jobAd = request.payload.getJobAd();
+        JobTracker jobTracker = JobTracker.getInstance();
+        jobTracker.updateJobStatus(jobAd, JobState.ASSIGNED);
+        return null;
     }
 
     public String collectPayment() {
@@ -53,7 +53,7 @@ public class JobSeeker extends User {
 
     public String receiveRequest(Request request) {
         respondJob(true, request);
-	return "yes";
+        return "yes";
     }
 
     private String changeAvailability(Boolean status) {
